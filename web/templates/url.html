@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BitPy</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <style>
+    	button{
+    		width:40%
+    	}
+    	a{
+    		max-width:100%
+    	}
+    </style>
+</head>
+
+<body>
+    <div class="container" style="padding-top:25px">
+        <hgroup>
+            <h5>
+                BitPy
+            </h5>
+            <span>Open source url shortener made using flask</span>
+        </hgroup>
+        <article>
+	        <a href="{{url_for("route.index")}}" style="dipsplay:block">
+	           <p> 
+	           	add new url
+	           </p> 
+	        </a>
+	        {% if short_url %}
+	        	Shortened url : 
+		        <a href="{{config.HOST}}{{short_url}}" target="_blank" id="url"> 
+					{{config.HOST}}{{short_url}}
+				<a> 
+				<button onclick="copy()">
+					copy
+				</button>
+        <script>
+        	function copy() {
+        	  /* Get the text field */
+        	  var copyText = document.getElementById("url");
+        	  console.log(copyText.text)
+        	
+        	  /* Select the text field */
+
+        	  navigator.clipboard.writeText(copyText.text.trim());
+        	
+        	} 
+        </script>
+			{% endif %}
+        </article>
+  	</div>
+  </body>
+</html>
