@@ -5,7 +5,7 @@ class Config(object):
     # change hot to your domain if you want to deploying
     HOST = f"http://127.0.0.1:{PORT}/"
 
-    # change SQLALCHEMY_DATABASE_URI to fit your usag
+    # change SQLALCHEMY_DATABASE_URI to fit your database
     SQLALCHEMY_DATABASE_URI = "database+dialect://username:password@host/database_name"
     SQLALCHEMY_POOL_TIMEOUT = 86400
     SQLALCHEMY_POOL_SIZE = 200
