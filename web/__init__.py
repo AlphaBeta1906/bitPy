@@ -8,11 +8,11 @@ db = SQLAlchemy()
 migrate = Migrate()
 
 def run():
-    from .config import Config
+    from .config import Config,ConfigProd
     
     app.jinja_env.auto_reload = True
     app.config["TEMPLATES_AUTO_RELOAD"] = True
-    app.config.from_object(Config)
+    app.config.from_object(ConfigProd)
     db.init_app(app)
     migrate.init_app(app, db, compare_type=True)
 
