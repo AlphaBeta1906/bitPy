@@ -25,11 +25,11 @@ def index():
         db.session.commit()
         short_url = unique_id
         return redirect(url_for("route.url",short_url = short_url))
-    return render_template("index.html")
+    return render_template("index.jinja")
 
 @bitpy.route("/url/<short_url>")
 def url(short_url):
-    return render_template("url.html",short_url = short_url)
+    return render_template("url.jinja",short_url = short_url)
 
 
 @bitpy.route("/<unique_id>")
