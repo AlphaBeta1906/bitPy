@@ -16,4 +16,4 @@ class ConfigProd(Config):
     DEBUG =  False
     HOST = "your_production_host"
     ENV = "production"
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://bitpy:7GqpiaikKpQWg4q@bitpy.mysql.pythonanywhere-services.com/bitpy$default"
+    SQLALCHEMY_DATABASE_URI = "your_database_url"
