@@ -10,8 +10,12 @@ migrate = Migrate()
 marshmallow = Marshmallow()
 
 @app.errorhandler(400)
-def _403(e):
+def _400(e):
     return jsonify(msg="some data are empty"),400
+
+@app.errorhandler(404)
+def _404(e):
+    return jsonify(msg="page not found"),404
 
 def run():
     from .config import Config,ConfigProd
