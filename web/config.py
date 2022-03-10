@@ -18,3 +18,4 @@ class ConfigProd(Config):
     ENV = "production"
     SQLALCHEMY_DATABASE_URI = "mysql+pymysql://bitpy:7GqpiaikKpQWg4q@bitpy.mysql.pythonanywhere-services.com/bitpy$default"
     
+
